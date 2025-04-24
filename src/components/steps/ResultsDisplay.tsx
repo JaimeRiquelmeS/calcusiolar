@@ -89,9 +89,12 @@ const ResultsDisplay: React.FC = () => {
     },
     scales: {
       y: {
+        type: 'linear' as const,
         beginAtZero: true,
         ticks: {
-          callback: (value: number) => `$${value.toLocaleString()}`,
+          callback: function(value: any) {
+            return `$${value.toLocaleString()}`;
+          }
         },
       },
     },
